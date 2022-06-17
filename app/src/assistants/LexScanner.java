@@ -27,6 +27,7 @@ public class LexScanner {
         estado = 0;
         char c;
         Token token = null;
+        String termo = "";
         while(true){
             c = nextChar();
             switch(estado){
@@ -34,12 +35,16 @@ public class LexScanner {
                     if(isEspaco(c)){
                         estado = 1;
                     }else if(isParametro(c)){
+                        termo += c;
                         estado = 2;
                     }else if(isCalculo(c)){
+                        termo += c;
                         estado = 3;
                     }else if(isNumero(c)){
+                        termo += c;
                         estado = 4;
                     }else if(isLetraE(c)){
+                        termo += c;
                         estado = 9;
                     }else{
                         System.out.println(c);
@@ -62,6 +67,7 @@ public class LexScanner {
                 case 2:
                     token = new Token();
                     token.setTipo(Token.PARAMETRO);
+                    token.setTermo(termo);
                     back();
                     System.out.println("PARAMETRO");
                     return token;
@@ -69,15 +75,18 @@ public class LexScanner {
                 case 3:
                     token = new Token();
                     token.setTipo(Token.CALCULO);
+                    token.setTermo(termo);
                     back();
                     System.out.println("CALCULO");
                     return token;
 
                 case 4:
                     if(isNumero(c)){
+                        termo += c;
                         estado = 4;
                     }
                     if(isPonto(c)){
+                        termo += c;
                         estado = 6;
                     }else{
                         estado = 5;
@@ -87,12 +96,14 @@ public class LexScanner {
                 case 5:
                     token = new Token();
                     token.setTipo(Token.INTEIRO);
+                    token.setTermo(termo);
                     back();
                     System.out.println("INTEIRO");
                     return token;
 
                 case 6:
                     if(isNumero(c)){
+                        termo += c;
                         estado = 7;
                     }else{
                         System.out.println(c);
@@ -106,8 +117,8 @@ public class LexScanner {
                     }else{
                         token = new Token();
                         token.setTipo(Token.DECIMAL);
+                        token.setTermo(termo);
                         back();
-                        // System.out.println("c = == =" + c);
                         System.out.println("DECIMAL");
                         return token;
                     }
@@ -115,6 +126,7 @@ public class LexScanner {
 
                 case 9: 
                     if(isLetraX(c)){
+                        termo += c;
                         estado = 10;
                     }else{
                         System.out.println(c);
@@ -124,6 +136,7 @@ public class LexScanner {
 
                 case 10:
                     if(isLetraP(c)){
+                        termo += c;
                         estado = 11;
                     }else{
                         System.out.println(c);
@@ -134,6 +147,7 @@ public class LexScanner {
                 case 11:
                     token = new Token();
                     token.setTipo(Token.LETRA);
+                    token.setTermo(termo);
                     back();
                     System.out.println("LETRA");
                     return token;
