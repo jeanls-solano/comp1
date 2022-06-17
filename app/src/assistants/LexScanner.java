@@ -45,7 +45,7 @@ public class LexScanner {
                         estado = 4;
                     }else if(isLetraE(c)){
                         termo += c;
-                        estado = 9;
+                        estado = 8;
                     }else{
                         System.out.println(c);
                         throw new RuntimeException("token não reconhecido");
@@ -124,27 +124,27 @@ public class LexScanner {
                     }
                     break;
 
-                case 9: 
+                case 8: 
                     if(isLetraX(c)){
                         termo += c;
-                        estado = 10;
+                        estado = 9;
                     }else{
                         System.out.println(c);
                         throw new RuntimeException("token não reconhecido X");
                     }
                     break;
 
-                case 10:
+                case 9:
                     if(isLetraP(c)){
                         termo += c;
-                        estado = 11;
+                        estado = 10;
                     }else{
                         System.out.println(c);
                         throw new RuntimeException("token não reconhecido P");
                     }
                     break;
 
-                case 11:
+                case 10:
                     token = new Token();
                     token.setTipo(Token.LETRA);
                     token.setTermo(termo);
