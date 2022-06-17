@@ -47,7 +47,8 @@ public class LexScanner {
                         termo += c;
                         estado = 8;
                     }else{
-                        System.out.println(c);
+                        //perguntar ao professor
+                        System.out.println("c = (" + c + "]");
                         throw new RuntimeException("token não reconhecido");
                     }
                     break;
@@ -167,8 +168,9 @@ public class LexScanner {
     }
     
     private boolean isEspaco(char c){
-        return c == ' ';
+        return c == ' ' || c == '\n' || c == '\r';
     }
+    // \\r\\n|\\n"
 
     private boolean isNumero(char c){
         return c >= '0'  && c <= '9'; 
