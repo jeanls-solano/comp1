@@ -10,16 +10,23 @@ Projeto de Compiladores 1
 
 # Furst e Follow
 Não terminais =  E, T, P, F
+
 Terminais = +, -, *, /, ^, exp, [, ] ,( ,) ,id
  
 FIRST[E] = + - * / ^ exp ( id
+
 FIRST[T] = * / ^ exp ( id  
+
 FIRST[P] = ^ exp ( id  
+
 FIRST[F] = ( id
  
 FOLLOW[E] = + - ) $
+
 FOLLOW[T] = * / + - ) $
+
 FOLLOW[P] = ^ * / + - ) $
+
 FOLLOW[F] = ] ^ * / + - ) $
 
 
