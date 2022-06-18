@@ -25,8 +25,4 @@ FOLLOW[F] = ] ^ * / + - ) $
 
 # Tabela de Análise
 
-	+	-	*	/	^	exp	(	id
-E	E -> E + T  |  E - T  	E -> E + T  |  E - T  	E -> E + T  |  E - T  |  T 	E -> E + T  |  E - T  |  T 	E -> E + T  |  E - T  |  T 	E -> E + T  |  E - T  |  T 	E -> E + T  |  E - T  |  T 	E -> E + T  |  E - T  |  T 
-T			T -> T * P  |  T / P	T -> T * P  |  T / P	T -> T * P  |  T / P  | P	T -> T * P  |  T / P  | P	T -> T * P  |  T / P  | P	T -> T * P  |  T / P  | P
-P					P ->  P ^ F	P ->  P ^ F | exp [ F ]	P ->  P ^ F |  F 	P ->  P ^ F |  F 
-F							F -> ( E )	F -> id
+![image](https://user-images.githubusercontent.com/67402140/174445185-3a12bb3c-4335-453c-a647-dbceafe4fef5.png)
