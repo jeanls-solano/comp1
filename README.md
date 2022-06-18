@@ -8,7 +8,7 @@ Projeto de Compiladores 1
 
 ![image](https://user-images.githubusercontent.com/67402140/174203544-3aab8aa4-2526-4ac7-ad8b-e89a75bb5197.png)
 
-# Furst e Follow
+# First e Follow
 Não terminais =  E, T, P, F
 
 Terminais = +, -, *, /, ^, exp, [, ] ,( ,) ,id
