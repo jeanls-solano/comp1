@@ -6,7 +6,7 @@ Projeto de Compiladores 1
 
 # Autômato: 
 
-![image](https://user-images.githubusercontent.com/67402140/174203544-3aab8aa4-2526-4ac7-ad8b-e89a75bb5197.png)
+![image](https://user-images.githubusercontent.com/67402140/175380225-f753a2d7-2c4e-423c-a8f8-78aed7b0cbea.png)
 
 # First e Follow
 Não terminais =  E, T, P, F
