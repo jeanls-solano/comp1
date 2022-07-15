@@ -76,7 +76,7 @@ public class LexScanner {
                 case 3:
                     token = new Token();
                     token.setTipo(Token.CALCULO);
-                    token.setTermo(termo);
+                    token.setTermo(termo);               
                     back();
                     System.out.println("CALCULO");
                     return token;
