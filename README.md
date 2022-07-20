@@ -30,5 +30,5 @@ FOLLOW[P] = ^ * / + - ) $
 FOLLOW[F] = ] ^ * / + - ) $
 
 
-# Tabela de Compilador Sintático
+# Tabela do Compilador Sintático
 
