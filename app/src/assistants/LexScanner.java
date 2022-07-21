@@ -15,7 +15,6 @@ public class LexScanner {
             byte[] bytes = Files.readAllBytes(Paths.get(arquivo));
             conteudo = (new String(bytes)).toCharArray();
         } catch (Exception e) {
-            System.out.println("entrou aq");
             e.printStackTrace();
         }
     }
