@@ -84,8 +84,7 @@ public class LexScanner {
                     if(isNumero(c)){
                         termo += c;
                         estado = 4;
-                    }
-                    if(isPonto(c)){
+                    }else if(isPonto(c)){
                         termo += c;
                         estado = 6;
                     }else{
@@ -113,6 +112,7 @@ public class LexScanner {
 
                 case 7:
                     if(isNumero(c)){
+                        termo += c;
                         estado = 7;
                     }else{
                         token = new Token();

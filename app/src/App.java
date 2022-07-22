@@ -20,7 +20,6 @@ public class App {
         } while (token != null);
         entrada.remove(entrada.size()-1);
         entrada.remove(entrada.size()-1);
-
         syntheticAnalytic.AnalyticalDecision(entrada);
     }
 }
