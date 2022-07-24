@@ -8,6 +8,7 @@ public class Token {
     public static final int CALCULO = 3;
     public static final int  PARAMETRO = 4;
     public static final int  ESPACO = 5;
+    public static final int  FIM = 6;
 
     private int  tipo;
     private String termo;

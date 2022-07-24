@@ -46,8 +46,7 @@ public class LexScanner {
                         termo += c;
                         estado = 8;
                     }else{
-                        //perguntar ao professor
-                        System.out.println("c = (" + c + "]");
+                        System.out.println("c = [" + c + "]");
                         throw new RuntimeException("token não reconhecido");
                     }
                     break;
@@ -57,9 +56,10 @@ public class LexScanner {
                         estado = 1;
                     }else{
                         token = new Token();
-                        token.setTipo(Token.ESPACO);
+                        token.setTipo(Token.FIM);
+                        token.setTermo("$");
                         back();
-                        System.out.println("ESPACO");
+                        System.out.println("QUEBRA LINHA");
                         return token;
                     }
                     break;
@@ -88,17 +88,14 @@ public class LexScanner {
                         termo += c;
                         estado = 6;
                     }else{
-                        estado = 5;
+                        token = new Token();
+                        token.setTipo(Token.INTEIRO);
+                        token.setTermo(termo);
+                        back();
+                        System.out.println("INTEIRO");
+                        return token;
                     }
                     break;
-
-                case 5:
-                    token = new Token();
-                    token.setTipo(Token.INTEIRO);
-                    token.setTermo(termo);
-                    back();
-                    System.out.println("INTEIRO");
-                    return token;
 
                 case 6:
                     if(isNumero(c)){
@@ -167,7 +164,7 @@ public class LexScanner {
     }
     
     private boolean isEspaco(char c){
-        return c == ' ' || c == '\n' || c == '\r';
+        return c == '\n' || c == '\r';
     }
     // \\r\\n|\\n"
 
