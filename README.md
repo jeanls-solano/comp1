@@ -32,3 +32,7 @@ FOLLOW[F] = ] ^ * / + - ) $
 
 # Tabela do Compilador Sintático
 
+![image](https://user-images.githubusercontent.com/67402140/180669799-6ce894ca-4de8-4040-8335-6924a2d50e4c.png)
+
+
+
